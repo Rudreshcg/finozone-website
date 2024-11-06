@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finozone Financial Services IMF Private Limited</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); 
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'finozone' && password === '12345') {
+                localStorage.setItem('isAuthenticated', 'true');
+                localStorage.setItem('username', username);
+
+                window.location.href = 'nextpage.html';
+            } else {
+                alert('Invalid username or password!');
+            }
+        }
+
+        window.onload = function () {
+            if (localStorage.getItem('isAuthenticated') === 'true') {
+                window.location.href = 'nextpage.html';
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -21,9 +44,9 @@
 
     <!-- Heading Content -->
     <section class="heading-content">
-        <h1>Finozone Financial Services IMF Private Limited</h1>
-        <p>India’s 1st Standalone Independent Financial Institution</p>
-        <p>Finozone Partners Mutual Fund Distributor</p>
+        <h1>Client Support Services</h1>
+        <p>Our mission is to unlock your journey toward financial freedom by providing 360'</p>
+        <p>services with simple tools and suitable insights</p>
     </section>
 
     <div id="main">
@@ -45,7 +68,7 @@
 
             <!-- Login Section -->
             <div class="login-container">
-                <form class="login-form">
+                <form class="login-form" onsubmit="handleLogin(event)">
                     <h2>Login</h2>
                     <div class="input-group">
                         <label for="username">Username</label>
@@ -55,7 +78,7 @@
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" required>
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="loginButton">Submit</button>
                 </form>
             </div>
 
