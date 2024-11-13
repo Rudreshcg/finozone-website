@@ -18,6 +18,12 @@ header {
     justify-content: space-between;
     align-items: center;
     color: #ff3300;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -47,10 +53,10 @@ header {
     text-decoration: underline;
 }
 
-/* Heading content styles */
 .heading-content {
     text-align: center;
     margin: 40px 0;
+    padding-top: 90px;
 }
 
 .heading-content h1 {
@@ -64,10 +70,10 @@ header {
     margin-bottom: 5px;
 }
 
-/* Main content styles */
 #main {
-    max-width: 1200px;
-    margin: 20px auto;
+    margin-left: 270px;
+    margin-right: 270px;
+    max-width: calc(100% - 540px);
     padding: 20px;
 }
 
@@ -76,32 +82,41 @@ header {
     justify-content: space-between;
     align-items: flex-start;
     gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-/* Agenda section */
 .agenda-section {
-    width: 25%;
+    position: fixed;
+    top: 62px;
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 63px);
+    background-color: #ff3300;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .agenda-section h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #ff3300;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: white;
 }
 
 .agenda-section ul {
-    /* list-style-type: none; */
-    padding-left: 10px;
+    padding-left: 0;
 }
 
 .agenda-section li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     font-size: 16px;
 }
 
-/* Login form styles */
 .login-container {
-    width: 35%;
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -142,9 +157,16 @@ button[type="submit"]:hover {
     background-color: #cc2900;
 }
 
-/* Partner section */
 .partner-section {
-    width: 25%;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 250px;
+    height: calc(100vh - 70px);
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .partner-section h4 {
@@ -154,7 +176,6 @@ button[type="submit"]:hover {
 }
 
 .partner-section ul {
-    /* list-style-type: none; */
     padding-left: 10px;
 }
 
@@ -163,7 +184,6 @@ button[type="submit"]:hover {
     font-size: 16px;
 }
 
-/* Download links */
 .download-links {
     margin-top: 35px;
     text-align: center;
