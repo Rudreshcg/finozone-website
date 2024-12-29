@@ -19,6 +19,7 @@
             localStorage.removeItem('username');
             window.location.href = 'index.html';
         }
+        
     </script>
 </head>
 <body>
@@ -36,9 +37,85 @@
 
     <!-- Welcome Section -->
     <section class="heading-content">
-        <h1>Welcome to Finozone Financial Services</h1>
+        <h1>Welcome to Finozone Investment Services Private Limited</h1>
         <p>You've successfully logged in as <strong id="usernameDisplay"></strong>!</p>
     </section>
+
+    <!-- KYC Section (Collapsible) -->
+    <section>
+      <h3 class="collapsible">KYC Forms & Online links</h3>
+      <div class="content">
+          <ul>
+              <li class="physical-kyc"><a href="https://drive.google.com/file/d/1hazXGONgJVO2q4X3hF7RIqpmUHszsqFb/view?usp=sharing" target="_blank">1. Individual From</a></li>
+              <li class="online-kyc"><a href="https://drive.google.com/file/d/1IkRu04j9g8anSTSALoD6vwF8Twu2tJjo/view?usp=sharing" target="_blank">2. Non-Individual Form</a></li>
+              <li class="online-kyc"><a href="https://www.dspim.com/invest/#goto=kyc" target="_blank">3. Online link for modification</a></li>
+              <li class="online-kyc"><a href="https://partners.sbimf.com/partner-login" target="_blank">4. New KYC Link (SBI)</a></li>
+              <li class="online-kyc"><a href="https://drive.google.com/file/d/1Qvdmya1Wv3cdyr9F7LIEhVabDm9byYd9/view?usp=sharing" target="_blank">5. KYC Rules</a></li>          
+          </ul>
+      </div>
+  </section>
+
+         
+  
+    
+  <!--on Bord (forms)-->
+  <section>
+    <h3 class="collapsible">On Board Forms</h3>
+    <div class="content">
+        <ul>
+            <li class="physical-kyc"><a href="**********************">1. RI Client From</a></li>
+            <li class="online-kyc"><a href="****************">2. NRI Client Form</a></li>
+            <li class="online-kyc"><a href="****************">3. Health Insurance form </a></li>
+            <li class="online-kyc"><a href="*******************">3. Term Insurance form </a></li>
+            <li class="online-kyc"><a href="*******************************">4. on Board process</a></li>        
+        </ul>
+    </div>
+</section>
+
+<!--RI TO NRI Convertion -->
+<section>
+    <h3 class="collapsible">RI To NRI Convertion</h3>
+    <div class="content">
+        <ul>
+            <li class="physical-kyc"><a href="************">1.Froms</a></li>
+            <li class="online-kyc"><a href="**************">2. Dacuments Deatils</a></li>
+           </ul>
+    </div>
+</section>
+
+<!--Mandate -->
+<section>
+    <h3 class="collapsible">Mandate</h3>
+    <div class="content">
+        <ul>
+            <li class="physical-kyc"><a href="**********">1.Mandate Rules</a></li>
+            <li class="online-kyc"><a href="*********">2.Banklist Enable for Mandates</a></li>
+           </ul>
+    </div>
+</section>
+
+<!--Whitelist Funds of the year -->
+<section>
+    <h3 class="collapsible">Whitelist Funds of the Year</h3>
+    <div class="content">
+        <ul>
+            <li class="physical-kyc"><a href="**********">1.Whitelist Funds</a></li>
+            <li class="online-kyc"><a href="*********">2.Insurance Schemes</a></li>
+           </ul>
+    </div>
+</section>
+
+<!--NFO Fund of the Month -->
+<section>
+    <h3 class="collapsible">NFO List</h3>
+    <div class="content">
+        <ul>
+            <li class="physical-kyc"><a href="**********">1.NFO</a></li>
+            
+           </ul>
+    </div>
+</section>
+
 
     <!-- Add Logout Button at the Bottom -->
     <div style="text-align: center; margin-top: 50px;">
@@ -46,10 +123,19 @@
             Logout
         </button>
     </div>
+    
 
     <script>
-        // Display the username from localStorage
-        document.getElementById('usernameDisplay').innerText = localStorage.getItem('username');
+        document.querySelectorAll('.collapsible').forEach(collapsible => {
+    collapsible.addEventListener('click', () => {
+        const content = collapsible.nextElementSibling;
+        if (content) {
+            content.classList.toggle('open');
+            collapsible.classList.toggle('open');
+        }
+    });
+});
+
     </script>
 </body>
 </html>
